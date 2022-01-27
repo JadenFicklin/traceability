@@ -19,8 +19,8 @@ rollbar.log("Hello world!");
 
 //post name
 app.post("/api/name", (req, res) => {
+  rollbar.log("User added name");
   const { name } = req.body;
-  console.log(req.body);
   let returnName = {
     name,
   };

@@ -18,11 +18,13 @@ var rollbar = new Rollbar({
 rollbar.log("Hello world!");
 
 //code
-//rollbar log when page is loaded
+//rollbar log when page is loaded -- running error
 // app.get("/", (req, res) => {
 //   rollbar.info("HTML served successfully");
 //   res.sendFile(path.join(__dirname, "/index.html"));
 // });
+
+rollbar.log("Hello world!");
 
 //I dont know what this is but it helps with rollbar
 app.use(rollbar.errorHandler(0));

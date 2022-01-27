@@ -16,9 +16,18 @@ var rollbar = new Rollbar({
 });
 
 rollbar.log("Hello world!");
+
+//code
+//rollbar log when page is loaded
+app.get("/", (req, res) => {
+  rollbar.info("HTML served successfully");
+  res.sendFile(path.join(__dirname, "/index.html"));
+});
+
+//I dont know what this is but it helps with rollbar
 app.use(rollbar.errorHandler(0));
 
-//heroku port and mine
+//heroku port and local port
 const port = process.env.PORT || 5678;
 
 // connect files and folders middleware

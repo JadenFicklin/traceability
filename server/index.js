@@ -10,13 +10,12 @@ app.use(cors());
 //rollbar
 var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
-  accessToken: "post_server_item",
+  accessToken: "7dcb7eeeac934aaf88742db28fffd5ef",
   captureUncaught: true,
   captureUnhandledRejections: true,
 });
 
 rollbar.log("Hello world!");
-
 app.use(rollbar.errorHandler(0));
 
 //heroku port and mine

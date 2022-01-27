@@ -15,16 +15,7 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 });
 
-rollbar.log("Hello world!");
-
-//code
-//rollbar log when page is loaded -- running error
-// app.get("/", (req, res) => {
-//   rollbar.info("HTML served successfully");
-//   res.sendFile(path.join(__dirname, "/index.html"));
-// });
-
-rollbar.log("Hello world!");
+rollbar.log("Hello worlddd!");
 
 //I dont know what this is but it helps with rollbar
 app.use(rollbar.errorHandler(0));

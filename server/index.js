@@ -15,7 +15,17 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 });
 
-rollbar.log("Hello worlddd!");
+rollbar.log("Hello world!");
+
+//post name
+app.post("/api/name", (req, res) => {
+  const { name } = req.body;
+  console.log(req.body);
+  let returnName = {
+    name,
+  };
+  res.status(200).send(returnName);
+});
 
 //I dont know what this is but it helps with rollbar
 app.use(rollbar.errorHandler(0));
